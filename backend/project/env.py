@@ -10,7 +10,9 @@ class Environment(BaseSettings):
     POSTGRES_DB: str = "bs"
     POSTGRES_PASSWORD: str = "postgres"
     POSTGRES_PORT: int = 5432
-    TIME_ZONE: str = "UTC"
+    ALLOWED_HOSTS: str = "*"
+    CSRF_TRUSTED_ORIGINS: str = "http://127.0.0.1:8000"
+    SECRET_KEY: str = "STRONG_KEY"
 
 
 ENV = Environment()
