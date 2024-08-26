@@ -9,9 +9,6 @@ class PaymentMode(models.TextChoices):
     CHEQUE = "Cheque"
 
 
-FISCAL_YEAR_CHOICES = [("2081-82", "2081-82")]
-
-
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     address = models.TextField()
@@ -24,7 +21,6 @@ class Customer(models.Model):
 class Sales(models.Model):
     fiscal_year = models.CharField(
         max_length=7,
-        choices=FISCAL_YEAR_CHOICES,
         default="2081-82",
     )
     party_name = models.CharField(max_length=255)
